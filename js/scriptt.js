@@ -7,56 +7,60 @@
 //event listeners
 
                 //selectinhg element
-// let abcd=document.getElementById("abcd");   
-// console.log(abcd);
-// console.dir(abcd);//if we want to see all the properties of the element then we use console.dir
-// let mmm=document.getElementsByClassName("mmm");
-// console.log(mmm);
-// console.dir(mmm);
-// let abcd=document.querySelectorAll  ("h1");//it will select the first element with id abcd
-// console.log(abcd);
-// console.dir(abcd);
+let abcd=document.getElementById("abcd");   
+console.log(abcd);
+console.dir(abcd);//if we want to see all the properties of the element then we use console.dir
+let mmm=document.getElementsByClassName("mmm");
+console.log(mmm);
+console.dir(mmm);
+let abcde=document.querySelectorAll  ("h1");//it will select the first element with id abcd
+console.log(abcde);
+console.dir(abcde);
 
-//                 //manipulating element
-// //texxt/access:
-// //1.innerText  
-// //2.textContent 
-// //3.innerHtml
-// let h1=document.querySelector("h1");
-// h1.textContent="hello world"; 
-// h1.innerHTML="<i>hello world</i>";//it will make the text italic
-// // h1.hidden=true;//it will hide the element  
-// console.dir(h1);
+                //  manipulating element
+//texxt/access:
+//1.innerText  
+//2.textContent 
+//3.innerHtml
+let h1=document.querySelector("h1");
+h1.textContent="hello world"; 
+h1.innerHTML="<i>hello world</i>";//it will make the text italic
+h1.hidden=true;//it will hide the element  
+console.dir(h1);
 
-//                //attribute manipulation:
-// // //1.getAttribute
-// // //2.setAttribute
-// // //3.removeAttribute4
-// // //let img=document.querySelector("img");
-// // console.dir(img);
-// // //a.href="https://www.google.com";//it will change the href attribute of the anchor tag
-// // //a.setAttribute("href","https://www.google.com");//it will change the href attribute of the anchor tag
-// // //a.setAttribute("href","https://www.facebook.com");//it will change the href attribute of the anchor tag) 
-// // //a.setAttribute("href","https://www.facebook.com");//it will change the href attribute of the anchor tag) 
-// // img.setAttribute("src","https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png");//it will change the src attribute of the image tag
-// let a=document.querySelector("a");
-// console.log(a.getAttribute("href"));//it will return the href attribute of the anchor tag
-// a.removeAttribute("href");//it will remove the href attribute of the anchor tag
+                //attribute manipulation:
+//1.getAttribute
+//2.setAttribute
+//3.removeAttribute4
+let img=document.querySelector("img");
+console.dir(img);
+a.href="https://www.google.com";//it will change the href attribute of the anchor tag
+a.setAttribute("href","https://www.google.com");//it will change the href attribute of the anchor tag
+a.setAttribute("href","https://www.facebook.com");//it will change the href attribute of the anchor tag) 
+a.setAttribute("href","https://www.facebook.com");//it will change the href attribute of the anchor tag) 
+img.setAttribute("src","https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png");//it will change the src attribute of the image tag
+let a=document.querySelector("a");
+console.log(a.getAttribute("href"));//it will return the href attribute of the anchor tag
+a.removeAttribute("href");//it will remove the href attribute of the anchor tag
 
-//                     //dynamic dom manipulation:
-// //1.createElement:sabde phele esse  use kro k kiya create krna heh body me aur eske liye use hota hehtextconten kiya likhna heh create krne ke baad usko add krna hota heh body me appendChild se
-// //2.appendChild:location specify krna ki kaha add krna heh yeh basically use hota heh script ke bhadh create krne ke liye
-// //3.removeChild
-// //4.prepend:yeh use hota heh element ko body ke starting me add krne ke liye
-// //let h2=document.createElement("h2");//it will create a new h1 element
-// h2.textContent="hello world";
-// document.body.appendChild(h2);//it will add the h1 element to the end of the body
-// //document.body.prepend(h2);//it will add the h1 element to the beginning of the body
-// let h1=document.querySelector("h1");
-// h1.remove;//it will remove the h1 element from the body
-// let h3=document.createElement("h3");
-// h3.textContent="hello world";
-// document.querySelector("div").appendChild(h3);//it will add the h3 element to the div element
+                    //dynamic dom manipulation:
+// 1.createElement:sabde phele esse  use kro k kiya create krna heh body me aur eske liye use hota hehtextconten kiya likhna heh create krne ke baad usko add krna hota heh body me appendChild se
+let h2=document.createElement("h2");//it will create a new h1 element
+h2.textContent="hello world";
+
+// 2.appendChild:location specify krna ki kaha add krna heh yeh basically use hota heh script ke bhadh create krne ke liye
+document.body.appendChild(h2);//it will add the h1 element to the end of the body
+let h3=document.createElement("h3");
+h3.textContent="hello world";
+document.querySelector("div").appendChild(h3);//it will add the h3 element to the div element
+
+// 3.removeChild
+let h1=document.querySelector("h1");
+h1.remove;//it will remove the h1 element from the body
+
+// 4.prepend:yeh use hota heh element ko body ke starting me add krne ke liye
+document.body.prepend(h2);//it will add the h1 element to the beginning of the body
+
 
                        //style updates via .style and classlist(add,remove,toggle)
 //style use krke hum element ke style ko change kr skte heh classlist use krke hum element ke class ko add remove toggle kr skte heh
@@ -305,8 +309,21 @@ console.log(dets.data);
 // if we use backspace to delete the value of the input element then it will log null to the console because backspace does not add any character to the input element it only removes characters from it so it does not trigger the input event with any data but it triggers the input event with null data.
 
 //3.submit:yeh event tab trigger hota heh jab user kisi form ko submit krta heh
+let form=document.querySelector("form");
+let inputs=document.querySelectorAll("input");
+form.addEventListener("submit",function(dets){
+    dets.preventDefault();//it will prevent the default behavior of the form which is to submit the form and reload the page
+    console.log(
+    inputs[0].value,
+    inputs[1].value,
+    inputs[2].value,
+    inputs[3].value
+);
+});
+
 //4.mouseover:yeh event tab trigger hota heh jab user kisi element par mouse pointer ko le jata heh
 //5.keyup:yeh event tab trigger hota heh jab user kisi key ko release krta heh
+
 //6.change:yeh event tab trigger hota heh jab user kisi input element ke value ko change krta heh aur uske baad input element se focus hata deta heh
 let sel=document.querySelector("select");
 let device=document.querySelector("#device");
@@ -315,3 +332,30 @@ sel.addEventListener("change",function(dets){
     device.textContent=`${dets.target.value} Device Selected`;
     console.log(dets.target.value);
 });//it will log the current value of the select element to the console whenever it is changed and focus is removed from it
+
+//7.keydown:yeh event tab trigger hota heh jab user kisi key ko press krta heh
+let h = document.querySelector("h1");
+
+window.addEventListener("keydown", function (dets) {
+    if (dets.key === " ") {
+        h.textContent = "SPACE";
+    } else {
+        h.textContent = dets.key;
+    }
+    //console.log(`key ${dets.key} is pressed`);//it will log the key that is pressed to the console whenever any key is pressed
+});//it will log the key that is pressed to the console whenever any key is pressed
+
+
+//  8.file input change:yeh event tab trigger hota heh jab user kisi file input element ke value ko change krta heh  
+let button = document.querySelector("#button");
+let fileinp = document.querySelector("#fileinp");
+button.addEventListener("click", function () {
+    fileinp.click();
+});
+
+fileinp.addEventListener("change", function (dets) {
+     const file=(dets.target.files[0]);
+    if(file){
+    button.textContent = file.name;
+    }
+   });//it will log the name of the selected file to the console whenever the value of the file input element is changed
