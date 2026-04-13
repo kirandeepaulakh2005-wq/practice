@@ -247,12 +247,11 @@
 // });
 
 //26.set the font size of all paragraphs to 18px using javascript.
-// hello ji i am on github my bugdi 
 
-let paragraphs=document.querySelectorAll("p");
-paragraphs.forEach(function(p){
-    p.style.fontSize="18px";//it will set the font size of all paragraphs to 18px
-});
+// let paragraphs=document.querySelectorAll("p");
+// paragraphs.forEach(function(p){
+//     p.style.fontSize="18px";//it will set the font size of all paragraphs to 18px
+// });
 
 
                  //Events and event handling:
@@ -281,18 +280,38 @@ h1.addEventListener("click",function(){
 //2.removeEventListener:yeh method ek event listener ko element se remove krta heh jise hum event handler bhi kehte heh jab specified event trigger hota heh to yeh event handler function execute nahi hota he h1.addEventListener("click",function(){
 // h1.style.color="red";//it will change the color of the h1 element to red when it is clicked
 // });
-document.querySelector("p");
-function dblclick(){
-    p.style.color="green";
-}
-p.addEventListener("dblclick",dblclick);
-p.removeEventListener("dblclick",dblclick);//it will remove the event listener from the p element so that when it is double clicked the color will not change to green
+// document.querySelector("p");
+// function dblclick(){
+//     p.style.color="green";
+// }
+// p.addEventListener("dblclick",dblclick);
+// p.removeEventListener("dblclick",dblclick);//it will remove the event listener from the p element so that when it is double clicked the color will not change to green
 
                    //common events:click,input change,submit,mouseover,keyup
+
 //1.click:yeh event tab trigger hota heh jab user kisi element par click krta heh
-//2.input change:yeh event tab trigger hota heh jab user kisi input element ke value ko change krta heh
+let p=document.querySelector("p");
+p.addEventListener("click",function(){
+p.style.color="blue";//it will change the color of the p element to blue when it is clicked
+}); 
+
+//2.input:yeh event tab trigger hota heh jab user kisi input element ke value ko change krta heh
+let input=document.querySelector("input");
+input.addEventListener("input",function(dets){
+    if(dets.data !==null){
+console.log(dets.data);
+    }
+});//it will log the current value of the input element to the console whenever it is changed
+// if we use backspace to delete the value of the input element then it will log null to the console because backspace does not add any character to the input element it only removes characters from it so it does not trigger the input event with any data but it triggers the input event with null data.
+
 //3.submit:yeh event tab trigger hota heh jab user kisi form ko submit krta heh
 //4.mouseover:yeh event tab trigger hota heh jab user kisi element par mouse pointer ko le jata heh
 //5.keyup:yeh event tab trigger hota heh jab user kisi key ko release krta heh
+//6.change:yeh event tab trigger hota heh jab user kisi input element ke value ko change krta heh aur uske baad input element se focus hata deta heh
+let sel=document.querySelector("select");
+let device=document.querySelector("#device");
 
- 
+sel.addEventListener("change",function(dets){
+    device.textContent=`${dets.target.value} Device Selected`;
+    console.log(dets.target.value);
+});//it will log the current value of the select element to the console whenever it is changed and focus is removed from it
