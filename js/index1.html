@@ -79,7 +79,7 @@ html, body{
     padding: 30px;
     height: 100%;
     width:100%;
-    background-color: black;
+    background-color: #222;
 
 }
  
@@ -87,11 +87,33 @@ input{
     display: block;
 }
 .card{
+    max-width:200px ;
     margin-top: 40px;
     border-radius: 10px;
     display:inline-block;
     padding:20px;
     border:2px solid #555;
+    color: #fff;
+    
+}
+.profile{
+    width:40px;
+    height: 40px;
+    border-radius:50%;
+    margin-bottom:7px;
+    overflow: hidden;
+}
+.profile img{
+    width:100%;
+    height: 100%;
+    object-fit:cover;
+}
+.card h5{
+    margin-top: 3px;
+}
+.card p{
+    font-size: 12px;
+    margin-top:10px;
 }
         </style>
         </head>
@@ -134,8 +156,6 @@ input{
     <div id="button">upload file</div>
 </div>
 
-<!--hihi-->
-
                                         <!-- submit event section -->
 <div id="main1">
 <form action="">
@@ -145,9 +165,14 @@ input{
     <input type="text" placeholder="profile pic">
     <input type="submit" >
 </form>
-<div class="card">
-    //new comment
+<!-- <div class="card">
+<div class="profile">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC_4TRnFKe8tWW0w12cNyYBfl7-tVpMwyelQ&s" alt="">
 </div>
+<h3>kirandeep kaur</h3>
+<h5>creative coder</h5>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam aspernatur ipsam debitis doloribus consectetur explicabo omnis cupiditate fuga pariatur, saepe sed error.</p>
+</div> -->
 </div>
    <script src="scriptt.js"></script>
 </body>
