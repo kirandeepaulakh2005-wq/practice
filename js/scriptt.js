@@ -353,7 +353,7 @@ main1.appendChild(card);
 // if(input.type !=="submit" ){
 // inputs.value="";
 // }
-// })//it is used when i need blank form.
+// })//it is used when i need blank form after submit the form.
 
 });//USED FOR REAL TIME DATA ENTRY CARD
 
