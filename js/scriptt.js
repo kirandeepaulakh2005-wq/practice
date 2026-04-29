@@ -257,6 +257,8 @@
 // });
 
 
+
+
 //                 //Events and event handling:
 // //1.what is an event in javascript?
 // //event ek action hota heh jo user ya browser ke dwara trigger hota heh jaise click,mouseover,keydown etc. event ke dwara hum user ke interactions ko handle kr sakte heh aur uske according apne webpage ko respond kr sakte heh
@@ -441,3 +443,83 @@
 
 //                     //  event bubbling and capturing
 // //event bubbling:jispe event ayega agr oss pr listener nhi hua to humara event uske parent par listener dhundhega aur aisa krte krte upar ki taraf move krega
+// document.querySelector("#nav").addEventListener("click",function(){
+//     alert("clicked");
+// });
+
+// let ul= document.querySelector("ul");
+//  ul.addEventListener("click",function(dets){
+//     dets.target.style.textDecoration="line-through";
+//  });
+
+//event capturing:opposite to event bubbling aur agr child ka listener chalega to woh  jump krke eske parent ke pass jayega fr oska listener chalega esse krte krte last html ke listener tk event chalega (bhar se andr tkk event chalega) aur agr kesi event ka capture phase chalana hoh to last me true likhdo kyoki capture phase by default hota heh .
+
+// let a=document.querySelector(".a");
+// let b=document.querySelector(".b");
+// let c=document.querySelector(".c");
+// let btn=document.querySelector("button");
+
+// btn.addEventListener("click",function(){
+//     console.log("button clicked");
+// });
+// c.addEventListener("click",function(){
+//     console.log("c clicked");
+// }, 
+// true
+// );
+// b.addEventListener("click",function(){
+//     console.log("b clicked");
+// });
+// a.addEventListener("click",function(){
+//     console.log("a clicked");
+// },
+// true
+// );
+
+//                         //    event delegation
+
+// // event delegation:multiple child elements pe alag-alag event lagane ke bajaye ek parent pe hi event laga dete hain.
+// document.getElementById("parent").addEventListener("click", function(e) {
+//     console.log(e.target.innerText);
+// });
+
+
+                        //  PRACTICE
+// live character counter:
+
+// let inp = document.querySelector("input");
+// let span = document.querySelector("span");
+
+// inp.addEventListener("input", function () {
+//     let Left = 20 - inp.value.length;
+
+//     if (Left < 0) {
+//         span.textContent = Left;
+//         span.style.color = "red";
+//     } else {
+//         span.textContent = Left;
+//         span.style.color = "white";
+//     }
+// });
+
+
+
+
+                        //   forms and form validation
+//form validation:eska mtlb heh ki jo detail fill ki heh woh valid hoh aur sari detail fill hone ke bhadh hi form submit hoh.
+let nm=document.querySelector("#name");
+let form=document.querySelector("form");
+form.addEventListener("submit",function(dets){
+    dets.preventDefault();
+
+    if(nm.value.length<=2){
+        document.querySelector("#hide").style.display="initial";
+    }
+    else{
+      document.querySelector("#hide").style.display="none";   
+    }
+});
+
+
+
+                           
