@@ -507,18 +507,31 @@
 
                         //   forms and form validation
 //form validation:eska mtlb heh ki jo detail fill ki heh woh valid hoh aur sari detail fill hone ke bhadh hi form submit hoh.
+//reading values from input,textarea,select:Form ke andar jo bhi fields hain unki value lene ke liye .value use hota hai
+//prevent default submission:By default page ko reload hone se rokneke liye use hota heh
+//inline and js based validation:
+//showing error messages conditionally:Condition ke base pe error show/hide karte hain
+//pattern attribute vs customer regex
+
+
+
+//js based validation:
 let nm=document.querySelector("#name");
 let form=document.querySelector("form");
 form.addEventListener("submit",function(dets){
     dets.preventDefault();
 
-    if(nm.value.length<=2){
+    if(nm.value.length <=2 ){
         document.querySelector("#hide").style.display="initial";
     }
     else{
       document.querySelector("#hide").style.display="none";   
     }
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+    let ans = regex.test("kiran@a.a");//this line give us about email validation
+    console.log(ans);//customer regex
 });
+
 
 
 

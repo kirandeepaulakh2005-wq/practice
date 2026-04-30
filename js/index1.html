@@ -350,7 +350,7 @@ small{
 
                             <!-- for form and form validation section -->
 <form >
-    <input type="text" placeholder="name">
+    <input required minlength="3" maxlength="10" id="name" type="text" placeholder="name">
     <div id="hide">
         <br>
     <small >your name should be greater than 2 characters</small>
@@ -370,6 +370,16 @@ small{
     <br><br>
     <input type="submit">
 </form>
+
+                <!-- for pattern attribute and customer regex-->
+<form1 >
+    <input pattern="[a-z]{3,8}" required  id="nm" type="text" placeholder="name">
+    <input type="email" placeholder="email">
+    <input type="submit">
+    </form1>
+
+
+                           <!-- email and password validator-->
 
    <script src="scriptt.js"></script>
 </body>
